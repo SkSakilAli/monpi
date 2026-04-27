@@ -2,7 +2,7 @@ import psutil
 import os
 
 
-async def get_cuurent_usage():
+async def get_curent_usage():
     usage_dict = {}
     usage_dict["status"] = "online"
     usage_dict["cpu"] = psutil.cpu_percent(interval=1)

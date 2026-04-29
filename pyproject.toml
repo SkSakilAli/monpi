@@ -4,12 +4,17 @@ version = "0.0.1"
 authors = [
   { name="Sk Sakil Ali", email="hello@sakil.me" },
 ]
-description = "FastAPI Application monitoring services"
+description = "Dead simple FastAPI Application monitoring service"
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+   "psutil"
 ]
 license = "MIT"
 license-files = ["LICEN[CS]E*"]

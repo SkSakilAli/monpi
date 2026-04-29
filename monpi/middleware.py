@@ -26,6 +26,7 @@ class Monitor:
             if (self.data_uid - self.first_uid) > self.save_limit:
                 del data_dict[self.first_uid]
                 self.first_uid += 1
+            return response
 
         @app.get("/monitor/data")
         async def return_data():
@@ -33,7 +34,7 @@ class Monitor:
 
         @app.get("/monitor/health")
         async def return_health():
-            return health.get_curent_usage()
+            return await health.get_curent_usage()
 
         def current_stats():
             return self.data

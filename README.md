@@ -14,7 +14,10 @@
 
 ## Installation
 
-```pip install monpi ```
+``` 
+```    pip install monpi    
+
+```
 
 
 
@@ -28,9 +31,9 @@ from monpi.middleware import Monitor
 app = FastAPI
 
 monitor = Monitor(app = app,
-                  alert=True,           //Optional If altert set to true you must provide discord webhooks url
-                  discord_webhook = "your_discord_server_webhook_url",
                   save_limit = 1000,   //Save data of last 1000 request-response cycle, By default set to 100
+                  alert=True,           //Optional If altert set to true you must provide discord webhooks url
+                  discord_webhook = "your_discord_server_webhook_url"
                   )
 
 

@@ -13,11 +13,10 @@
 - **Zero‑overhead** – uses async middleware that doesn’t block your endpoints
 
 ## Installation
-
-```pip install monpi ```
+`pip install monpi`
+```pip install monpi 
 ```
 ```
-
 
 ## Quick Start
 ```
@@ -39,7 +38,7 @@ monitor = Monitor(app = app,
 
 ```
 
-After starting application as query results in the following url
+After starting application you can for data in the following GET Endpoints
 
 ```
 {BASE_URL}/monpi/data  //Returns Request ID, URL, Method, Response time

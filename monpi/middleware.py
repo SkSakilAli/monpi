@@ -1,3 +1,4 @@
+from os import initgroups
 from fastapi import FastAPI, Request
 from monpi.health import get_curent_usage
 import time
@@ -5,12 +6,24 @@ from . import health
 
 
 class Monitor:
-    def __init__(self, app: FastAPI, save_limit: int | None = None) -> None:
+    def __init__(self, 
+                 app: FastAPI, 
+                 save_limit: int | None = None, 
+                 aleart: bool = False, 
+                 discord_webhook: str | None = None) -> None,
+                 max_response_time: float | None = None,
+                 max_error: int | None = None,
+                 ttl: int | None = None
+        ):
+        """
+        Middleware intercepts every request and response, track and alert via discord messages
+        """
         self.app = app
         self.data = {}
         self.data_uid: int = 0
         self.save_limit: int = save_limit or 1000
         self.first_uid: int = self.data_uid
+        self.error : int = 0 
 
         @app.middleware("http")
         async def monitor_service(request: Request, call_next):
@@ -23,9 +36,11 @@ class Monitor:
             end_time = time.perf_counter()
             data_dict["respone_time"] = end_time - start_time
             data_dict["status_code"] = response.status_code
+            if response.status_code 
             if (self.data_uid - self.first_uid) > self.save_limit:
                 del data_dict[self.first_uid]
                 self.first_uid += 1
+            if 
             return response
 
         @app.get("/monitor/data")

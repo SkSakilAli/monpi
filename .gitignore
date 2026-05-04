@@ -1,0 +1,4 @@
+venv/
+dist/
+monpi.egg-info/
+monpi/__pycache__

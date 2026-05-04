@@ -13,15 +13,13 @@
 - **Zero‑overhead** – uses async middleware that doesn’t block your endpoints
 
 ## Installation
-`pip install monpi`
-```pip install monpi 
-```
-```
+
+```pip install monpi ```
+
+
+
 
 ## Quick Start
-```
-````
-````
 
 ```
 from fastapi import FastAPI

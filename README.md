@@ -15,7 +15,7 @@
 ## Installation
 
 ``` 
-```    pip install monpi    
+pip install monpi    
 
 ```
 
